@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS movie_db;
+USE movie_db;
+
+CREATE TABLE movies (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE reviews (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  movie_id INT,
+  review TEXT,
+  FOREIGN KEY (movie_id) REFERENCES movies(id)
+);
